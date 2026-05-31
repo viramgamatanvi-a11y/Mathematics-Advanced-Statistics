@@ -27,9 +27,6 @@
 
 ### 🔲 Confidence Interval:
 * ➡️ A Confidence Interval gives a range of values where we believe the true population parameter lies, with a given level of confidence (e.g., 95%).
-* 📌 **Formula:** $$\text{CI} = \text{sample\_mean} \pm z \cdot (\text{standard\_error})$$
-  * • $z = 1.96$ for 95% confidence
-  * • $\text{standard\_error} = \frac{s}{\sqrt{n}}$
 
 ### 🔲 Critical Value:
 * ➡️ A critical value is the cutoff point in a hypothesis test that separates the rejection region from the non-rejection region.
