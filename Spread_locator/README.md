@@ -1,197 +1,150 @@
-# 📊 Part A - Theoretical Foundation
+README – Spread Locator Dataset Statistical Analysis
+📌 Project Overview
 
-## 📘 1. What is Statistical Distributions?
+This project focuses on analyzing transaction data from the Spread Locator Dataset using statistical distributions, probability concepts, and data transformation techniques. The goal is to understand transaction behavior, identify patterns in transaction amounts and counts, evaluate probability distributions, assess normality, and apply transformations to improve data quality for further analysis.
 
-➡️ A statistical distribution describes how the values of a random variable are spread (or distributed) across possible outcomes.
+📂 Dataset Description
 
----
+The dataset contains transaction-related information such as:
 
-## 📈 2. What is a Q-Q Plot and why is it used?
+Transaction Status
+Transaction Count
+Transaction Amount
 
-➡️ A Q-Q plot is a graphical tool to check whether a dataset follows a particular theoretical distribution (often the Normal distribution).
+These variables are used to perform probability analysis, distribution modeling, and statistical evaluation.
 
-### 📌 Components:
+🎲 Bernoulli Distribution Analysis
 
-• X-axis → Theoretical quantiles (from the chosen distribution).
-• Y-axis → Sample quantiles (from your dataset).
+The Bernoulli Distribution was used to calculate the probability of successful transactions. Since transaction status has only two possible outcomes (Success or Failure), it is an ideal use case for Bernoulli modeling.
 
-### 📊 Interpretation:
+Purpose
+Determine the likelihood of a successful transaction.
+Convert transaction outcomes into binary values for probability calculation.
+Outcome
 
-✅ **Normal Data:** The points fall nearly along the diagonal line, meaning the data is approximately normally distributed.
+The analysis provided the overall success probability of transactions in the dataset.
 
-❌ **Exponential Data vs Normal:** The points deviate strongly from the line, especially in the tails, showing that the exponential data is not normally distributed.
+🎯 Binomial Distribution Analysis
 
----
+The Binomial Distribution was used to simulate transaction outcomes across multiple trials using the success probability obtained from the Bernoulli analysis.
 
-## 🔢 3. Difference between Discrete and Continuous Distribution?
+Purpose
+Model repeated transaction attempts.
+Estimate the number of successful transactions within a fixed number of trials.
+Outcome
 
-### 🔹 Discrete Distribution
+Generated simulated transaction scenarios and helped understand the expected number of successful transactions over multiple attempts.
 
-➡️ Definition: Deals with outcomes that are countable (finite or infinite but countable).
+📈 Poisson Distribution Analysis
 
-➡️ Probability: Each possible value has a specific probability.
+The Poisson Distribution was applied to model transaction frequency based on the average transaction count.
 
-### 📌 Common Discrete Distributions:
+Purpose
+Analyze how frequently transactions occur.
+Estimate the probability of observing a certain number of transactions in a given period.
+Outcome
 
-• Bernoulli (0 or 1, success/failure)
-• Binomial (number of successes in n trials)
-• Poisson (count of events in a fixed interval)
+Provided insights into transaction occurrence patterns and expected transaction volumes.
 
-### 🔹 Continuous Distribution
+💰 Log-Normal Distribution Analysis
 
-➡️ Definition: Deals with outcomes that take values in a continuous range (uncountable).
+Transaction amounts were analyzed using a Log-Normal Distribution because financial data often exhibits right-skewed behavior.
 
-➡️ Probability: Exact probability at one point = 0, but we measure probability over an interval.
+Purpose
+Examine the distribution pattern of transaction amounts.
+Determine whether transaction values follow a log-normal structure.
+Outcome
 
-### 📌 Common Continuous Distributions:
+The analysis identified the characteristics of transaction amount distribution and helped understand spending behavior.
 
-• Normal (Gaussian)
-• Exponential
-• Uniform (continuous range with equal chance)
+⚡ Power-Law Distribution Analysis
 
----
+A Power-Law Distribution was fitted to transaction amounts to investigate the presence of heavy-tailed behavior.
 
-## 🎯 4. What is Bernoulli Distribution?
+Purpose
+Identify whether a small number of transactions contribute disproportionately large values.
+Analyze extreme transaction patterns.
+Outcome
 
-➡️ A Bernoulli distribution is the simplest probability distribution.
+The analysis provided insights into rare but high-value transactions and the overall concentration of transaction amounts.
 
-It describes a random experiment with only two possible outcomes:
+📉 Q-Q Plot Analysis
 
-• ✅ Success (1) with probability p
-• ❌ Failure (0) with probability 1 − p
+A Quantile-Quantile (Q-Q) Plot was used to evaluate whether transaction amounts follow a normal distribution.
 
----
+Purpose
+Compare observed data with a theoretical normal distribution.
+Assess normality assumptions.
+Outcome
 
-## 🎲 5. What is Binomial Distribution?
+The plot helped determine whether transaction amounts are normally distributed or significantly skewed.
 
-➡️ The Binomial distribution is an extension of Bernoulli.
+🔄 Box-Cox Transformation
 
-It models the probability of getting k successes in n independent Bernoulli trials.
+The Box-Cox Transformation was applied to positive transaction amounts.
 
-📌 A Bernoulli distribution is a special case of the Binomial distribution when n = 1.
+Purpose
+Reduce skewness in the data.
+Improve normality.
+Stabilize variance for better statistical analysis.
+Outcome
 
-**Bernoulli(p) = Binomial(n = 1, p)**
+The transformed data became more suitable for statistical modeling and hypothesis testing.
 
----
+📏 Z-Score Analysis
 
-## 📉 6. Explain Log-Normal Distribution?
+Z-Scores were calculated for transaction amounts.
 
-➡️ A Log-Normal Distribution is a probability distribution in which the logarithm of the variable follows a normal distribution.
+Purpose
+Measure how far each transaction amount deviates from the mean.
+Detect unusual observations and potential outliers.
+Outcome
 
-In simple terms, if taking the natural logarithm (log) of a dataset makes it normally distributed, then the original data follows a Log-Normal Distribution.
+Helped identify transactions that were significantly higher or lower than typical transaction values.
 
-### 📌 Key Characteristics:
+🎯 Probability Analysis
 
-• Values are always positive (greater than 0).
-• The distribution is right-skewed (long tail on the right side).
-• Most observations are small, while a few observations can be very large.
-• Commonly used for financial and transaction data.
+A probability calculation was performed to estimate the likelihood of transaction amounts exceeding a specific threshold value.
 
----
+Purpose
+Assess the occurrence of high-value transactions.
+Understand the risk and frequency of large transaction amounts.
+Outcome
 
-## 📊 7. Explain Power Law Distribution?
+Provided the probability of observing transactions above the selected amount.
 
-➡️ A Power Law Distribution is a probability distribution where small values occur very frequently, while very large values occur rarely but have a significant impact.
+📚 Probability Density Function (PDF)
 
-### 📌 Key Characteristics:
+The Probability Density Function was used to visualize the distribution of transaction amounts.
 
-• Highly right-skewed distribution.
-• Most observations are small.
-• A few observations are extremely large.
-• Has a heavy tail, meaning large values are more common than in a Normal Distribution.
-• Often follows the 80/20 rule (Pareto Principle).
+Purpose
+Understand where transaction values are most likely to occur.
+Observe the shape and spread of the distribution.
+Outcome
 
----
+Provided a graphical representation of transaction amount density.
 
-## 🔄 8. What is Box-Cox Transform?
+📖 Cumulative Distribution Function (CDF)
 
-➡️ A Box-Cox Transformation is a statistical technique used to reduce skewness, stabilize variance, and make data closer to a normal distribution.
+The Cumulative Distribution Function was used to evaluate cumulative probabilities.
 
-### 📌 Why is it used?
+Purpose
+Determine the probability of transaction amounts being less than or equal to a specific value.
+Understand cumulative transaction behavior.
+Outcome
 
-• Reduces right-skewness or left-skewness.
-• Makes data more normally distributed.
-• Improves the performance of statistical models and hypothesis tests.
-• Stabilizes variance across the dataset.
+Provided a cumulative view of probability across transaction amounts.
 
-### 📌 How does it work?
+📊 Visualizations Used
 
-Box-Cox automatically finds the best value of λ (lambda) and transforms the data accordingly.
+The project includes several visual analyses:
 
-• λ = 1 → No transformation
-• λ = 0 → Log transformation
-• λ = 0.5 → Square root transformation
-• λ = -1 → Reciprocal transformation
+Q-Q Plot for normality assessment
+PDF Curve for probability density visualization
+CDF Curve for cumulative probability visualization
 
----
+These visualizations improve understanding of data distribution and transaction behavior.
 
-## 🎯 9. Explain Poisson Distribution with an Example?
+✅ Conclusion
 
-➡️ A Poisson Distribution is a probability distribution used to model the number of times an event occurs in a fixed interval of time, space, or area.
-
-### 📌 Conditions:
-
-• Events occur independently.
-• Events happen at a constant average rate.
-• We want to count the number of occurrences.
-
-### 🏦 Example:
-
-Suppose a bank receives 5 transactions per minute on average.
-
-Question:
-➡️ What is the probability that exactly 3 transactions occur in the next minute?
-
-Where:
-• λ (lambda) = 5
-• x = 3
-
-### 📌 Key Characteristics:
-
-• Used for count data.
-• Values are non-negative integers (0,1,2,3,...).
-• Mean = Variance = λ (lambda).
-• Suitable for rare or random events.
-
----
-
-## 📏 10. What is Z-score Probability?
-
-➡️ Z-score probability is the probability of a value occurring below, above, or between certain values in a Normal Distribution.
-
-A Z-score tells us how many standard deviations a value is away from the mean.
-
-### 📌 Why is Z-Score Useful?
-
-• Detects outliers.
-• Compares values from different datasets.
-• Calculates probabilities in a Normal Distribution.
-• Standardizes data for machine learning and statistical analysis.
-
----
-
-## 📈 11. Differentiate Probability Density Function (PDF) and Cumulative Distribution Function (CDF)?
-
-### 🔹 Probability Density Function (PDF)
-
-➡️ The PDF describes the likelihood of a random variable taking on a specific value.
-
-• For continuous variables, the probability of any exact value is 0.
-• The area under the PDF curve gives probability.
-
-### 📌 Properties:
-
-• Always ≥ 0
-• Total area under curve = 1
-
-### 🔹 Cumulative Distribution Function (CDF)
-
-➡️ The CDF gives the probability that a random variable X is less than or equal to a certain value x.
-
-• It is obtained by integrating the PDF from −∞ to x.
-
-### 📌 Properties:
-
-• Increases from 0 → 1
-• Non-decreasing function
-• Smooth for continuous distributions
+This project successfully applied multiple statistical distributions and probability concepts to analyze transaction data. Bernoulli and Binomial distributions were used to study transaction success, Poisson distribution modeled transaction frequency, and Log-Normal and Power-Law distributions examined transaction amounts. Q-Q Plot and Box-Cox Transformation were utilized to assess and improve normality, while Z-Score analysis identified unusual observations. Finally, PDF and CDF visualizations provided a deeper understanding of probability distributions and transaction patterns, enabling more informed data-driven insights.
