@@ -147,4 +147,7 @@ These visualizations improve understanding of data distribution and transaction 
 
 ✅ Conclusion
 
-This project successfully applied multiple statistical distributions and probability concepts to analyze transaction data. Bernoulli and Binomial distributions were used to study transaction success, Poisson distribution modeled transaction frequency, and Log-Normal and Power-Law distributions examined transaction amounts. Q-Q Plot and Box-Cox Transformation were utilized to assess and improve normality, while Z-Score analysis identified unusual observations. Finally, PDF and CDF visualizations provided a deeper understanding of probability distributions and transaction patterns, enabling more informed data-driven insights.
+This project successfully applied multiple statistical distributions and probability concepts to analyze transaction data. 
+Bernoulli and Binomial distributions were used to study transaction success, Poisson distribution modeled transaction frequency, and Log-Normal and Power-Law distributions examined transaction amounts. 
+Q-Q Plot and Box-Cox Transformation were utilized to assess and improve normality, while Z-Score analysis identified unusual observations. 
+Finally, PDF and CDF visualizations provided a deeper understanding of probability distributions and transaction patterns, enabling more informed data-driven insights.
